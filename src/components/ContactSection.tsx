@@ -3,8 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Calendar, FileText, Linkedin, Twitter, Facebook, Clock, Plug, TrendingUp, Send } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Calendar, FileText, Clock, Plug, TrendingUp, MessageCircle } from "lucide-react";
 
 const benefits = [
   { icon: Clock, title: "Save Time & Money", desc: "Eliminate repetitive tasks and reduce costs by up to 70%." },
@@ -13,12 +12,15 @@ const benefits = [
 ];
 
 const ContactSection = () => {
-  const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message sent!", description: "Thanks for reaching out. I'll get back to you within 24 hours." });
+    // Open Messenger with pre-filled message
+    const msg = encodeURIComponent(
+      `Hi! I'm ${form.name} (${form.email}).\n\nSubject: ${form.subject}\n\n${form.message}`
+    );
+    window.open(`https://m.me/jhzrrrl?ref=${msg}`, "_blank");
     setForm({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -54,12 +56,12 @@ const ContactSection = () => {
 
             <div className="space-y-3 pt-4">
               <Button variant="outline" className="w-full justify-start gap-2" asChild>
-                <a href="mailto:jhezreel@example.com">
+                <a href="mailto:jhezreel.suarez.ops@gmail.com">
                   <Mail className="h-4 w-4 text-primary" /> Email Me Directly
                 </a>
               </Button>
               <Button variant="outline" className="w-full justify-start gap-2" asChild>
-                <a href="#contact">
+                <a href="https://calendly.com/jhezreel-suarez-ops/discoverycallwithjhez" target="_blank" rel="noopener noreferrer">
                   <Calendar className="h-4 w-4 text-primary" /> Schedule a Call
                 </a>
               </Button>
@@ -70,22 +72,23 @@ const ContactSection = () => {
               </Button>
             </div>
 
-            <div className="flex gap-3 pt-2">
-              <Button variant="ghost" size="icon" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                  <Twitter className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                  <Facebook className="h-5 w-5" />
-                </a>
-              </Button>
+            {/* Online Platform Links */}
+            <div className="pt-2">
+              <p className="mb-3 text-sm font-medium text-muted-foreground">Find me on</p>
+              <div className="flex gap-3">
+                <Button variant="ghost" size="sm" className="gap-2 text-foreground" asChild>
+                  <a href="https://www.onlinejobs.ph/jobseekers/info/4325506" target="_blank" rel="noopener noreferrer">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/><text x="12" y="16" textAnchor="middle" fontSize="10" fill="currentColor" fontWeight="bold">OJ</text></svg>
+                    OnlineJobs.ph
+                  </a>
+                </Button>
+                <Button variant="ghost" size="sm" className="gap-2 text-foreground" asChild>
+                  <a href="https://www.upwork.com/freelancers/~01ea0186bed5f5a3e1" target="_blank" rel="noopener noreferrer">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703 0 1.491-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.214-1.832-2.148-4.032-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+                    Upwork
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
 
@@ -120,7 +123,7 @@ const ContactSection = () => {
                   required
                 />
                 <Button type="submit" className="w-full gap-2">
-                  <Send className="h-4 w-4" />
+                  <MessageCircle className="h-4 w-4" />
                   Send Message
                 </Button>
               </form>
