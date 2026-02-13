@@ -1,23 +1,35 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Stories", href: "#stories" },
+  { label: "Expertise", href: "#expertise" },
+  { label: "Projects", href: "#projects" },
+  { label: "Pricing", href: "#pricing" },
   { label: "Contact", href: "#contact" },
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle("dark");
+  };
 
   return (
     <header
@@ -27,11 +39,11 @@ const Header = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <a href="#" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary font-sans text-lg font-bold text-primary-foreground">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary font-display text-lg font-bold text-primary-foreground">
             JS
           </div>
-          <span className="hidden font-sans text-lg font-semibold text-foreground sm:block">
-            Jhez
+          <span className="hidden font-display text-lg font-semibold text-foreground sm:block">
+            Jhezreel Suarez
           </span>
         </a>
 
@@ -45,12 +57,23 @@ const Header = () => {
               {link.label}
             </a>
           ))}
-          <Button size="sm" className="ml-2 btn-glow bg-secondary text-secondary-foreground hover:bg-secondary/90" asChild>
-            <a href="#contact">Book a Session</a>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="ml-2"
+          >
+            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
+          <Button size="sm" className="ml-2" asChild>
+            <a href="#contact">Hire Me</a>
           </Button>
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
+          <Button variant="ghost" size="icon" onClick={toggleTheme}>
+            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
           <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -70,8 +93,10 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="mt-2 bg-secondary text-secondary-foreground" asChild>
-              <a href="#contact" onClick={() => setIsOpen(false)}>Book a Session</a>
+            <Button size="sm" className="mt-2" asChild>
+              <a href="#contact" onClick={() => setIsOpen(false)}>
+                Hire Me
+              </a>
             </Button>
           </div>
         </nav>
