@@ -11,11 +11,11 @@ const ChatbotWidget = () => {
       aria-label="Chat on Messenger"
     >
       <div className="relative">
-        <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-primary shadow-lg shadow-primary/20 transition-transform duration-200 group-hover:scale-110">
-          <img src={profileImg} alt="Chat with Jhezreel" className="h-full w-full object-cover" />
+        <div className="chatbot-pulse flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-full border-3 border-primary shadow-xl shadow-primary/30 transition-transform duration-200 group-hover:scale-110">
+          <img src={profileImg} alt="Chat with Jhez" className="h-full w-full object-cover" />
         </div>
-        <div className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500">
-          <MessageCircle className="h-3 w-3 text-white" />
+        <div className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-secondary">
+          <MessageCircle className="h-3.5 w-3.5 text-secondary-foreground" />
         </div>
       </div>
     </a>
