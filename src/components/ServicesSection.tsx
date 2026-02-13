@@ -1,31 +1,31 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Settings, Zap, Workflow, Bot, BarChart3 } from "lucide-react";
+import { Settings, Zap, Bot, Rocket, Workflow } from "lucide-react";
 
 const services = [
   {
     icon: Settings,
     title: "GHL Setup & Management",
-    desc: "Full GoHighLevel configuration, CRM pipelines, funnel building, and ongoing management to streamline your business.",
+    desc: "I handle your full GoHighLevel setup, from CRM pipelines and funnels to ongoing optimization, so your systems run smoothly and you can focus on growing your business with confidence.",
   },
   {
     icon: Zap,
-    title: "Zapier / Make Integrations",
-    desc: "Connect your favorite tools with powerful multi-step automations that run 24/7 without manual intervention.",
-  },
-  {
-    icon: Workflow,
-    title: "n8n Workflows",
-    desc: "Self-hosted, advanced workflow automation for complex business logic and data processing at scale.",
+    title: "Zapier & Make Integrations",
+    desc: "I connect your favorite tools through powerful multi-step automations that run quietly in the background, keeping your workflows moving smoothly without manual work.",
   },
   {
     icon: Bot,
     title: "AI Automation (OpenAI / GHL AI)",
-    desc: "Leverage AI-powered chatbots, content generation, and intelligent lead qualification to boost conversions.",
+    desc: "I build AI-powered automations—from chatbots to intelligent lead qualification—that help you respond faster, nurture leads better, and turn more conversations into conversions.",
   },
   {
-    icon: BarChart3,
-    title: "Custom Dashboards & Reporting",
-    desc: "Real-time analytics dashboards that give you clear visibility into KPIs and business performance.",
+    icon: Rocket,
+    title: "High-Converting Sales Funnels",
+    desc: "I build funnels that don't just look good—they're designed to convert. Using proven frameworks and strategic automation, your funnels guide visitors smoothly from first click to conversion while maximizing ROI through conversion-focused design, mobile-first layouts, and integrated analytics for smarter decisions.",
+  },
+  {
+    icon: Workflow,
+    title: "Advanced Automation Workflows",
+    desc: "I build intelligent automation systems that nurture your leads, follow up at the right moments, and help close sales—even while you sleep. From smart behavioral triggers to multi-channel sequences and continuous optimization, your workflows are designed to support consistent growth without manual effort.",
   },
 ];
 
@@ -37,7 +37,7 @@ const ServicesSection = () => {
           <h2 className="mb-3 font-display text-3xl font-bold text-foreground sm:text-4xl">
             What I <span className="text-primary">Offer</span>
           </h2>
-          <p className="text-muted-foreground">End-to-end automation services tailored to your business needs</p>
+          <p className="text-muted-foreground">Thoughtfully built automation that supports the systems behind your success.</p>
         </div>
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (

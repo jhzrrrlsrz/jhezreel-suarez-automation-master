@@ -5,48 +5,58 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Basic",
+    name: "Starter Package",
     price: "$299",
     period: "/month",
-    desc: "Perfect for solopreneurs getting started with automation.",
+    desc: "GoHighLevel account setup & full configuration, including a basic CRM pipeline.",
     features: [
-      "GHL account setup & configuration",
-      "Up to 3 Zapier/Make automations",
+      "GHL account setup & full configuration",
       "Basic CRM pipeline setup",
-      "Email support",
-      "Monthly strategy call",
+      "1–3 basic automations (GHL, Zapier, or Make.com)",
+      "Connect up to 3 apps (e.g., HubSpot, Gmail)",
+      "Simple triggers and actions for smooth workflows",
     ],
     popular: false,
   },
   {
-    name: "Standard",
-    price: "$599",
+    name: "Plus Package",
+    price: "$799",
     period: "/month",
-    desc: "Ideal for growing businesses that need full-stack automation.",
+    desc: "Everything in Starter, plus smarter multi-step automation.",
     features: [
-      "Everything in Basic",
-      "Up to 10 advanced automations",
-      "n8n workflow development",
-      "AI chatbot integration",
-      "Custom dashboard & reporting",
-      "Priority support",
-      "Bi-weekly strategy calls",
+      "Everything in Starter Package",
+      "4–6 automations (GHL, Zapier, or Make.com)",
+      "Multi-step workflows with conditional paths & delays",
+      "Automated onboarding & follow-up sequences",
+      "Error handling and notifications",
     ],
     popular: true,
   },
   {
-    name: "Premium",
-    price: "$999",
+    name: "Enterprise Package",
+    price: "$1,199",
     period: "/month",
-    desc: "For enterprises requiring complex integrations & AI solutions.",
+    desc: "Advanced integrations and full-scale automation.",
     features: [
-      "Everything in Standard",
-      "Unlimited automations",
-      "Advanced AI integrations (OpenAI)",
-      "Full API & webhook development",
-      "Dedicated account manager",
-      "24/7 priority support",
-      "Weekly strategy sessions",
+      "10–12 advanced automations",
+      "Integration of 5+ apps (CRMs, accounting, marketing)",
+      "Advanced conditional logic, loops & delays",
+      "Full onboarding, lead nurturing & follow-up sequences",
+      "Error monitoring & automated recovery",
+      "Documentation, SOPs & Loom videos",
+    ],
+    popular: false,
+  },
+  {
+    name: "Hourly Rate",
+    price: "$10–$15",
+    period: "/hour",
+    desc: "Flexible hands-on support for automations, workflows, and AI integrations.",
+    features: [
+      "Part-time or full-time availability",
+      "Pay only for the hours used",
+      "Perfect for long-term projects",
+      "Tailored to your specific needs",
     ],
     popular: false,
   },
@@ -60,9 +70,11 @@ const PricingSection = () => {
           <h2 className="mb-3 font-display text-3xl font-bold text-foreground sm:text-4xl">
             Simple, Transparent <span className="text-primary">Pricing</span>
           </h2>
-          <p className="text-muted-foreground">Choose a plan that fits your business goals</p>
+          <p className="mx-auto max-w-2xl text-muted-foreground">
+            Simple rates. No surprises. Just results. Straightforward pricing based on workflow complexity, number of apps, and required support. Packages are flexible and can be customized to match your specific project needs.
+          </p>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan) => (
             <Card
               key={plan.name}
