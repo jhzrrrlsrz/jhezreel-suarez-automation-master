@@ -77,19 +77,20 @@ const HeroSection = () => {
             <ShieldCheck className="h-4 w-4" />
             GoHighLevel Certified Admin
           </Badge>
+          <p className="text-lg font-semibold text-primary">No-Code Automation Specialist</p>
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Automate. Scale.{" "}
-            <span className="text-primary">Dominate</span> with Go High Level.
+            AI-Powered Automation to{" "}
+            <span className="text-primary">Streamline and Scale</span> for Smarter Growth
           </h1>
           <p className="max-w-xl text-lg text-muted-foreground">
-            Stop wrestling with complex setups. Let a certified expert transform your business operations while you focus on growing revenue and serving clients.
+            Stop stressing over complicated setups. I help streamline your business operations so you can focus on what truly matters—serving your clients and growing your business.
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
             <Button size="lg" className="text-base font-semibold" asChild>
-              <a href="#contact">Transform My Business Now</a>
+              <a href="#contact">Take My Business to the Next Level!</a>
             </Button>
             <Button size="lg" variant="outline" className="text-base" asChild>
-              <a href="#projects">See Success Stories</a>
+              <a href="#projects">Discover Real Success</a>
             </Button>
           </div>
         </div>
@@ -98,7 +99,7 @@ const HeroSection = () => {
           <div className="relative h-72 w-72 overflow-hidden rounded-2xl border-2 border-primary/20 shadow-2xl shadow-primary/10 sm:h-80 sm:w-80 lg:h-96 lg:w-96">
             <img
               src={profileImg}
-              alt="Jhezreel Suarez – GHL & Automation Specialist"
+              alt="Jhezreel Suarez – No-Code Automation Specialist"
               className="h-full w-full object-cover"
             />
           </div>
