@@ -102,3 +102,74 @@ html {
   90% { opacity: 1; }
   100% { transform: translateX(-100vw) translateY(-20px); opacity: 0; }
 }
+
+/* ── Custom Gear Cursor ─────────────────────────────────────────── */
+*, *::before, *::after {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFB6C1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/%3E%3C/svg%3E") 12 12, auto;
+}
+
+/* Spinning gear cursor on hover for interactive elements */
+a, button, [role="button"], label, input, textarea, select {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23FFB6C1' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/%3E%3C/svg%3E") 14 14, pointer;
+}
+
+/* ── Heartbeat animation ─────────────────────────────────────────── */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.25); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.2); }
+  70% { transform: scale(1); }
+}
+
+.heartbeat-emoji {
+  display: inline-block;
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+/* ── Hire Me bounce-glow ─────────────────────────────────────────── */
+@keyframes hire-bounce {
+  0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+  30% { transform: translateY(-4px) scale(1.04); box-shadow: 0 0 14px 4px hsl(var(--primary) / 0.45); }
+  60% { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 8px 2px hsl(var(--primary) / 0.25); }
+}
+
+.hire-me-btn {
+  animation: hire-bounce 2.4s ease-in-out infinite;
+}
+
+.hire-me-btn:hover {
+  animation: none;
+  transform: scale(1.06);
+  box-shadow: 0 0 18px 6px hsl(var(--primary) / 0.5);
+}
+
+/* ── Service card hover glow ─────────────────────────────────────── */
+.service-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  border-color: hsl(var(--primary) / 0.5);
+  box-shadow: 0 0 20px 4px hsl(var(--primary) / 0.2), 0 8px 30px -8px hsl(var(--primary) / 0.15);
+}
+
+.service-card:active {
+  transform: scale(1.03);
+  border-color: hsl(var(--primary) / 0.6);
+  box-shadow: 0 0 16px 3px hsl(var(--primary) / 0.25);
+}
+
+/* ── Scroll fade-in sections ─────────────────────────────────────── */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

@@ -21,7 +21,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="bg-card py-20">
+    <section className="bg-card py-20 fade-in-section">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-3 font-display text-3xl font-bold text-foreground sm:text-4xl">
@@ -31,13 +31,23 @@ const TestimonialsSection = () => {
         </div>
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
-            <Card key={t.name} className="border-border/50 bg-background">
-              <CardContent className="pt-6">
-                <Quote className="mb-4 h-8 w-8 text-primary/30" />
-                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">"{t.quote}"</p>
-                <div>
-                  <div className="font-display font-semibold text-foreground">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
+            <Card
+              key={t.name}
+              className="relative border-border/50 bg-background overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
+            >
+              {/* Decorative quote bubble tail */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/60 via-primary/30 to-transparent rounded-t-xl" />
+              <CardContent className="pt-8 pb-6">
+                <Quote className="mb-4 h-8 w-8 text-primary/40" />
+                <p className="mb-6 text-sm leading-relaxed text-muted-foreground italic">"{t.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 font-display text-sm font-bold text-primary">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="font-display font-semibold text-foreground text-sm">{t.name}</div>
+                    <div className="text-xs text-muted-foreground">{t.role}</div>
+                  </div>
                 </div>
               </CardContent>
             </Card>

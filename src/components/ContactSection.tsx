@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Calendar, FileText, Clock, Plug, TrendingUp, MessageCircle } from "lucide-react";
+import { Mail, Calendar, FileText, Clock, Plug, TrendingUp } from "lucide-react";
 
 const benefits = [
   { icon: Clock, title: "Save Time, Work Smarter", desc: "Automate repetitive tasks and free up hours every week." },
@@ -10,11 +10,11 @@ const benefits = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="bg-card py-20">
+    <section id="contact" className="bg-card py-20 fade-in-section">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-3 font-display text-3xl font-bold text-foreground sm:text-4xl">
-            Let's Build Something <span className="text-primary">Amazing</span> Together
+            Let's Build Something <span className="text-primary">Amazing</span> Together!
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Ready to automate your business processes? Send me a message or book a free consultation to discuss your specific needs.
@@ -40,28 +40,31 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right column - Contact options */}
+          {/* Right column - Contact options (reordered: View CV, Schedule a Call, Email Me) */}
           <Card className="border-border/50 bg-background">
             <CardContent className="space-y-4 pt-6">
-              <Button variant="outline" className="w-full justify-start gap-2" asChild>
-                <a href="mailto:jhezreel.suarez.ops@gmail.com">
-                  <Mail className="h-4 w-4 text-primary" /> Email Me Directly
-                  <span className="ml-auto text-xs text-muted-foreground">jhezreel.suarez.ops@gmail.com</span>
-                </a>
-              </Button>
-              <Button variant="outline" className="w-full justify-start gap-2" asChild>
-                <a href="https://calendly.com/jhezreel-suarez-ops/discoverycallwithjhez" target="_blank" rel="noopener noreferrer">
-                  <Calendar className="h-4 w-4 text-primary" /> Schedule a Call
-                </a>
-              </Button>
-              <Button variant="outline" className="w-full justify-start gap-2" asChild>
+              {/* 1. View CV */}
+              <Button variant="outline" className="w-full justify-start gap-2 transition-all duration-200 hover:scale-[1.02] hover:border-primary/40" asChild>
                 <a href="#" download>
                   <FileText className="h-4 w-4 text-primary" /> View CV
                 </a>
               </Button>
-              <Button className="w-full gap-2" asChild>
-                <a href="https://m.me/jhzrrrl" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-4 w-4" /> Send Message
+
+              {/* 2. Schedule a Call */}
+              <Button variant="outline" className="w-full justify-start gap-2 transition-all duration-200 hover:scale-[1.02] hover:border-primary/40" asChild>
+                <a href="https://calendly.com/jhezreel-suarez-ops/discoverycallwithjhez" target="_blank" rel="noopener noreferrer">
+                  <Calendar className="h-4 w-4 text-primary" /> Schedule a Call
+                </a>
+              </Button>
+
+              {/* 3. Email Me Directly */}
+              <Button variant="outline" className="w-full justify-start gap-2 transition-all duration-200 hover:scale-[1.02] hover:border-primary/40" asChild>
+                <a href="mailto:jhezreel.suarez.ops@gmail.com">
+                  <Mail className="h-4 w-4 text-primary" />
+                  <span className="flex flex-col items-start">
+                    <span>Email Me Directly</span>
+                    <span className="text-[0.75em] text-muted-foreground font-normal leading-tight">jhezreel.suarez.ops@gmail.com</span>
+                  </span>
                 </a>
               </Button>
 

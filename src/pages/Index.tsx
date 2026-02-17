@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -11,6 +12,23 @@ import ChatbotWidget from "@/components/ChatbotWidget";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  // Scroll-triggered fade-in for all .fade-in-section elements
+  useEffect(() => {
+    const sections = document.querySelectorAll(".fade-in-section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
