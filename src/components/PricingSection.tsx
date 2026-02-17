@@ -64,7 +64,7 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="bg-card py-20">
+    <section id="pricing" className="bg-card py-20 fade-in-section">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-3 font-display text-3xl font-bold text-foreground sm:text-4xl">

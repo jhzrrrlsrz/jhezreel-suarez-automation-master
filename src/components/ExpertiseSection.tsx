@@ -46,7 +46,7 @@ const categories = [
 
 const ExpertiseSection = () => {
   return (
-    <section id="expertise" className="bg-background py-20">
+    <section id="expertise" className="bg-background py-20 fade-in-section">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-3 font-display text-3xl font-bold text-teal sm:text-4xl">

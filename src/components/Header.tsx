@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
   { label: "Expertise", href: "#expertise" },
   { label: "Projects", href: "#projects" },
+  { label: "Services", href: "#services" },
   { label: "Pricing", href: "#pricing" },
   { label: "Contact", href: "#contact" },
 ];
@@ -65,8 +65,8 @@ const Header = () => {
           >
             {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
-          <Button size="sm" className="ml-2" asChild>
-            <a href="#contact">Hire Me</a>
+          <Button size="sm" className="ml-2 hire-me-btn" asChild>
+            <a href="#contact">Hire Me!</a>
           </Button>
         </nav>
 
@@ -93,9 +93,9 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="mt-2" asChild>
+            <Button size="sm" className="mt-2 hire-me-btn" asChild>
               <a href="#contact" onClick={() => setIsOpen(false)}>
-                Hire Me
+                Hire Me!
               </a>
             </Button>
           </div>

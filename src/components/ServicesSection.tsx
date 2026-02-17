@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Settings, Zap, Bot, Rocket, Workflow } from "lucide-react";
+import { Settings, Zap, Bot, Rocket, Workflow, Wrench } from "lucide-react";
 
 const services = [
   {
@@ -27,11 +27,16 @@ const services = [
     title: "Advanced Automation Workflows",
     desc: "I build intelligent automation systems that nurture your leads, follow up at the right moments, and help close sales—even while you sleep. From smart behavioral triggers to multi-channel sequences and continuous optimization, your workflows are designed to support consistent growth without manual effort.",
   },
+  {
+    icon: Wrench,
+    title: "Automation Maintenance & Optimization",
+    desc: "I keep your automations running at peak performance with regular audits, fixes, and tweaks—so your systems stay reliable, efficient, and up-to-date while you focus on growing your business without tech headaches.",
+  },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="bg-background py-20">
+    <section id="services" className="bg-background py-20 fade-in-section">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-3 font-display text-3xl font-bold text-foreground sm:text-4xl">
@@ -43,7 +48,7 @@ const ServicesSection = () => {
           {services.map((s) => (
             <Card
               key={s.title}
-              className="group border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+              className="group border-border/50 bg-card service-card cursor-default"
             >
               <CardHeader>
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
