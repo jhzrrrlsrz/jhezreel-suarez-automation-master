@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck } from "lucide-react";
-import profileImg from "@/assets/jhezreel-profile.png";
+import profileImg from "@/assets/jhezreel-profile-nobg.png";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -19,20 +19,14 @@ const HeroSection = () => {
     resize();
     window.addEventListener("resize", resize);
 
-    // Soft orbs (brand colors: blush pink, navy glow, white)
-    type Orb = {
-      x: number; y: number; r: number;
-      vx: number; vy: number;
-      color: string; opacity: number;
-    };
+    type Orb = { x: number; y: number; r: number; vx: number; vy: number; color: string; opacity: number };
     const orbs: Orb[] = [];
     const orbColors = [
-      "rgba(255,182,193,", // blush pink
-      "rgba(0,80,160,",    // navy glow
-      "rgba(253,209,220,", // softer pink
-      "rgba(255,255,255,", // white
+      "rgba(255,182,193,",
+      "rgba(0,80,160,",
+      "rgba(253,209,220,",
+      "rgba(255,255,255,",
     ];
-
     for (let i = 0; i < 18; i++) {
       orbs.push({
         x: Math.random() * canvas.width,
@@ -45,7 +39,6 @@ const HeroSection = () => {
       });
     }
 
-    // Small drifting particles
     type Particle = { x: number; y: number; r: number; vx: number; vy: number; color: string; opacity: number };
     const particles: Particle[] = [];
     const pColors = ["rgba(255,182,193,0.7)", "rgba(255,255,255,0.5)", "rgba(253,209,220,0.5)"];
@@ -64,8 +57,6 @@ const HeroSection = () => {
     let animId: number;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw orbs
       orbs.forEach((orb) => {
         const grad = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.r);
         grad.addColorStop(0, orb.color + orb.opacity + ")");
@@ -81,8 +72,6 @@ const HeroSection = () => {
         if (orb.y < -orb.r) orb.y = canvas.height + orb.r;
         if (orb.y > canvas.height + orb.r) orb.y = -orb.r;
       });
-
-      // Draw particles
       particles.forEach((p) => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -112,7 +101,7 @@ const HeroSection = () => {
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
       <div className="container relative z-10 mx-auto flex flex-col items-center gap-12 px-4 py-16 lg:flex-row lg:py-24">
         <div className="flex-1 space-y-6 text-center lg:text-left">
-          {/* Large badge */}
+          {/* Enlarged badge */}
           <div className="inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/10 px-6 py-3 backdrop-blur-sm">
             <ShieldCheck className="h-7 w-7 text-primary flex-shrink-0" />
             <span className="font-display text-lg font-semibold text-primary sm:text-xl">
@@ -128,38 +117,40 @@ const HeroSection = () => {
             Stop stressing over complicated setups. I help streamline your business operations so you can focus on what truly matters—serving your clients and growing your business.
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
-            <Button
-              size="lg"
-              className="text-base font-semibold transition-all duration-200 hover:scale-105 active:scale-95"
-              asChild
-            >
+            <Button size="lg" className="text-base font-semibold transition-all duration-200 hover:scale-105 active:scale-95" asChild>
               <a href="#contact">Take My Business to the Next Level!</a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-base transition-all duration-200 hover:scale-105 active:scale-95"
-              asChild
-            >
+            <Button size="lg" variant="outline" className="text-base transition-all duration-200 hover:scale-105 active:scale-95" asChild>
               <a href="#projects">Discover Real Success</a>
             </Button>
           </div>
         </div>
 
-        {/* Profile picture with brand frame + hover glow */}
+        {/* Profile picture — transparent bg, brand frame + hover glow */}
         <div className="relative flex-shrink-0 group">
+          {/* Ambient glow behind photo */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/40 via-primary/20 to-transparent blur-2xl transition-all duration-500 group-hover:blur-3xl group-hover:from-primary/60" />
-          <div className="relative h-72 w-72 overflow-hidden rounded-2xl border-2 border-primary/40 shadow-2xl shadow-primary/20 transition-all duration-500 group-hover:border-primary/70 group-hover:shadow-primary/40 sm:h-80 sm:w-80 lg:h-96 lg:w-96"
-            style={{ boxShadow: "0 0 0 4px hsl(var(--primary)/0.15), 0 20px 60px -10px hsl(var(--primary)/0.25)" }}
+
+          {/* Frame */}
+          <div
+            className="relative h-72 w-72 overflow-visible rounded-2xl border-2 border-primary/40 transition-all duration-500 group-hover:border-primary/70 sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+            style={{
+              background: "linear-gradient(135deg, hsl(var(--primary)/0.08) 0%, transparent 100%)",
+              boxShadow: "0 0 0 4px hsl(var(--primary)/0.12), 0 20px 60px -10px hsl(var(--primary)/0.25)",
+              transition: "box-shadow 0.5s ease, border-color 0.5s ease",
+            }}
           >
             <img
               src={profileImg}
               alt="Jhezreel Suarez – No-Code Automation Specialist"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105"
+              style={{ filter: "drop-shadow(0 8px 24px hsl(var(--primary)/0.3))" }}
             />
           </div>
-          <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/25 blur-2xl" />
-          <div className="absolute -top-4 -left-4 h-20 w-20 rounded-full bg-primary/15 blur-xl" />
+
+          {/* Decorative orbs */}
+          <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/25 blur-2xl transition-all duration-500 group-hover:bg-primary/40" />
+          <div className="absolute -top-4 -left-4 h-20 w-20 rounded-full bg-primary/15 blur-xl transition-all duration-500 group-hover:bg-primary/30" />
         </div>
       </div>
     </section>
