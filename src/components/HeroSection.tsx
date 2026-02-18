@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck } from "lucide-react";
-import profileImg from "@/assets/jhezreel-profile-nobg.png";
+import profileImg from "@/assets/jhezreel-profile-v3.png";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -99,36 +98,33 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-background pt-20 fade-in-section visible">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
-      <div className="container relative z-10 mx-auto flex flex-col items-center gap-12 px-4 py-16 lg:flex-row lg:items-start lg:py-24">
 
-        {/* ── Left: text content — strict left-aligned ── */}
-        <div className="flex-1 space-y-6 text-left">
+      <div className="container relative z-10 mx-auto flex flex-col items-center gap-10 px-8 py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-20 lg:py-24 xl:px-28">
 
-          {/* Name + tagline block — left-aligned like Lovable.dev personal site */}
-          <div className="space-y-1">
-            <p className="font-display text-3xl font-bold text-foreground sm:text-4xl">Jhezreel Suarez</p>
-            <p className="text-base text-muted-foreground">Jhezreel Suarez – Your Automation Sidekick Virtual Assistant!</p>
-          </div>
+        {/* ── Left: text content ── */}
+        <div className="flex-1 space-y-7 text-left">
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm">
-            <ShieldCheck className="h-4 w-4 text-primary flex-shrink-0" />
-            <span className="font-sans text-sm font-semibold text-primary">
-              GoHighLevel &amp; No-Code Automation Specialist
-            </span>
-          </div>
-
+          {/* Main headline */}
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             AI-Powered Automation to{" "}
             <span className="text-primary">Streamline and Scale</span> for Smarter Growth
           </h1>
 
+          {/* Supporting paragraph */}
           <p className="max-w-xl text-lg text-muted-foreground">
             Stop stressing over complicated setups. I help streamline your business operations so you can focus on what truly matters—serving your clients and growing your business.
           </p>
 
-          {/* CTA Buttons with gentle heartbeat-scale animation */}
-          <div className="flex flex-col items-start gap-3 sm:flex-row">
+          {/* Slogan — prominent, quoted, larger, italic bold */}
+          <p
+            className="max-w-xl text-xl font-bold italic leading-snug text-foreground/90 sm:text-2xl"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            "Mastering the systems behind your success, so you have the freedom to follow your passion."
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
             <Button
               size="lg"
               className="hero-cta-btn text-base font-semibold"
@@ -145,46 +141,37 @@ const HeroSection = () => {
               <a href="#projects">Discover Real Success</a>
             </Button>
           </div>
-
-          {/* Slogan below buttons — italic, bold, legible */}
-          <p className="max-w-xl text-sm italic font-semibold leading-relaxed text-muted-foreground/80" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Mastering the systems behind your success, so you have the freedom to follow your passion.
-          </p>
         </div>
 
-        {/* ── Right: Profile picture — circular, pink glow halo, badge overlay ── */}
-        <div className="relative flex-shrink-0 group self-center lg:self-start lg:mt-8">
+        {/* ── Right: Profile picture — circular, smoky pink bg, no badge ── */}
+        <div className="relative flex-shrink-0 group self-center">
 
           {/* Pink pulsing halo ring */}
           <div className="hero-photo-halo absolute inset-0 rounded-full" />
 
-          {/* Circular frame */}
+          {/* Circular frame with smoky pink background */}
           <div
-            className="relative overflow-hidden rounded-full border-2 border-primary/50 transition-all duration-500 group-hover:border-primary/80"
+            className="relative overflow-hidden rounded-full transition-all duration-500"
             style={{
-              width: "clamp(260px, 30vw, 360px)",
-              height: "clamp(260px, 30vw, 360px)",
-              boxShadow: "0 0 0 4px hsl(var(--primary)/0.15), 0 20px 60px -10px hsl(var(--primary)/0.3)",
-              transition: "box-shadow 0.5s ease, border-color 0.5s ease",
+              width: "clamp(240px, 28vw, 340px)",
+              height: "clamp(240px, 28vw, 340px)",
+              background: "radial-gradient(circle at 60% 80%, rgba(255,182,193,0.45) 0%, rgba(255,153,187,0.25) 50%, rgba(255,105,160,0.12) 100%)",
+              boxShadow: "0 0 0 3px rgba(255,182,193,0.3), 0 0 30px 6px rgba(255,182,193,0.18), 0 20px 60px -10px rgba(255,105,160,0.25)",
+              transition: "box-shadow 0.5s ease",
             }}
           >
             <img
               src={profileImg}
               alt="Jhezreel Suarez – No-Code Automation Specialist"
               className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              style={{ filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))" }}
             />
           </div>
 
-          {/* Floating badge — top-right of circle, half-size pill */}
-          <div
-            className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background/80 backdrop-blur-sm px-2.5 py-1 shadow-lg"
-            style={{ maxWidth: "180px" }}
-          >
-            <ShieldCheck className="h-3 w-3 text-primary flex-shrink-0" />
-            <span className="font-sans text-[10px] font-semibold leading-tight text-foreground">
-              GoHighLevel &amp; No-Code Automation Specialist
-            </span>
-          </div>
+          {/* Hover glow intensifier */}
+          <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            style={{ boxShadow: "0 0 40px 12px rgba(255,182,193,0.35)" }}
+          />
 
           {/* Ambient glow blobs */}
           <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/25 blur-2xl transition-all duration-500 group-hover:bg-primary/40" />
