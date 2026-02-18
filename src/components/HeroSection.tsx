@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import profileImg from "@/assets/jhezreel-profile-v3.png";
+import profileImg from "@/assets/jhezreel-profile-v4.png";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -99,7 +99,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden bg-background pt-20 fade-in-section visible">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
-      <div className="container relative z-10 mx-auto flex flex-col items-center gap-10 px-8 py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-20 lg:py-24 xl:px-28">
+      <div className="container relative z-10 mx-auto flex flex-col items-center gap-10 px-8 py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-24 lg:py-24 xl:px-32">
 
         {/* ── Left: text content ── */}
         <div className="flex-1 space-y-7 text-left">
@@ -113,14 +113,6 @@ const HeroSection = () => {
           {/* Supporting paragraph */}
           <p className="max-w-xl text-lg text-muted-foreground">
             Stop stressing over complicated setups. I help streamline your business operations so you can focus on what truly matters—serving your clients and growing your business.
-          </p>
-
-          {/* Slogan — prominent, quoted, larger, italic bold */}
-          <p
-            className="max-w-xl text-xl font-bold italic leading-snug text-foreground/90 sm:text-2xl"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
-            "Mastering the systems behind your success, so you have the freedom to follow your passion."
           </p>
 
           {/* CTA Buttons */}
@@ -141,9 +133,17 @@ const HeroSection = () => {
               <a href="#projects">Discover Real Success</a>
             </Button>
           </div>
+
+          {/* Slogan — below buttons, larger, centered on mobile / left on desktop */}
+          <p
+            className="max-w-2xl text-2xl font-bold italic leading-snug text-primary sm:text-[1.6rem] lg:text-[1.75rem]"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            "Mastering the systems behind your success, so you have the freedom to follow your passion."
+          </p>
         </div>
 
-        {/* ── Right: Profile picture — circular, smoky pink bg, no badge ── */}
+        {/* ── Right: Profile picture — circular, smoky pink bg ── */}
         <div className="relative flex-shrink-0 group self-center">
 
           {/* Pink pulsing halo ring */}
@@ -153,9 +153,9 @@ const HeroSection = () => {
           <div
             className="relative overflow-hidden rounded-full transition-all duration-500"
             style={{
-              width: "clamp(240px, 28vw, 340px)",
-              height: "clamp(240px, 28vw, 340px)",
-              background: "radial-gradient(circle at 60% 80%, rgba(255,182,193,0.45) 0%, rgba(255,153,187,0.25) 50%, rgba(255,105,160,0.12) 100%)",
+              width: "clamp(260px, 30vw, 360px)",
+              height: "clamp(260px, 30vw, 360px)",
+              background: "radial-gradient(circle at 50% 60%, rgba(255,182,193,0.5) 0%, rgba(255,153,187,0.3) 45%, rgba(255,105,160,0.15) 100%)",
               boxShadow: "0 0 0 3px rgba(255,182,193,0.3), 0 0 30px 6px rgba(255,182,193,0.18), 0 20px 60px -10px rgba(255,105,160,0.25)",
               transition: "box-shadow 0.5s ease",
             }}
@@ -163,8 +163,11 @@ const HeroSection = () => {
             <img
               src={profileImg}
               alt="Jhezreel Suarez – No-Code Automation Specialist"
-              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              style={{ filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))" }}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              style={{
+                objectPosition: "50% 10%",
+                filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))",
+              }}
             />
           </div>
 
@@ -183,3 +186,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
