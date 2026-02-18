@@ -38,13 +38,19 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary font-display text-lg font-bold text-primary-foreground">
+        {/* Logo: JS badge + name + tagline */}
+        <a href="#" className="flex items-center gap-2 min-w-0">
+          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary font-display text-lg font-bold text-primary-foreground">
             JS
           </div>
-          <span className="hidden font-display text-lg font-semibold text-foreground sm:block">
-            Jhezreel Suarez
-          </span>
+          <div className="hidden sm:flex sm:flex-col sm:justify-center sm:gap-0 min-w-0">
+            <span className="font-display text-lg font-semibold leading-tight text-foreground whitespace-nowrap">
+              Jhezreel Suarez
+            </span>
+            <span className="text-xs leading-tight text-muted-foreground whitespace-nowrap truncate max-w-xs">
+              Your Automation Sidekick Virtual Assistant!
+            </span>
+          </div>
         </a>
 
         <nav className="hidden items-center gap-1 md:flex">
