@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import profileImg from "@/assets/jhezreel-profile-v4.png";
+import profileImg from "@/assets/jhezreel-profile-v5.png";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -99,87 +99,94 @@ const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden bg-background pt-20 fade-in-section visible">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
-      <div className="container relative z-10 mx-auto flex flex-col items-center gap-10 px-8 py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-24 lg:py-24 xl:px-32">
+      <div className="container relative z-10 mx-auto px-8 py-16 lg:px-24 lg:py-24 xl:px-32">
 
-        {/* ── Left: text content ── */}
-        <div className="flex-1 space-y-7 text-left">
+        {/* ── Main flex row: text left + photo right ── */}
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
 
-          {/* Main headline */}
-          <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            AI-Powered Automation to{" "}
-            <span className="text-primary">Streamline and Scale</span> for Smarter Growth
-          </h1>
+          {/* ── Left: text content ── */}
+          <div className="flex-1 space-y-7 text-left">
 
-          {/* Supporting paragraph */}
-          <p className="max-w-xl text-lg text-muted-foreground">
-            Stop stressing over complicated setups. I help streamline your business operations so you can focus on what truly matters—serving your clients and growing your business.
-          </p>
+            {/* Main headline */}
+            <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              AI-Powered Automation to{" "}
+              <span className="text-primary">Streamline and Scale</span> for Smarter Growth
+            </h1>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-            <Button
-              size="lg"
-              className="hero-cta-btn text-base font-semibold"
-              asChild
-            >
-              <a href="#contact">Take My Business to the Next Level!</a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="hero-cta-btn text-base"
-              asChild
-            >
-              <a href="#projects">Discover Real Success</a>
-            </Button>
+            {/* Supporting paragraph */}
+            <p className="max-w-xl text-lg text-muted-foreground">
+              Stop stressing over complicated setups. I help streamline your business operations so you can focus on what truly matters—serving your clients and growing your business.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+              <Button
+                size="lg"
+                className="hero-cta-btn text-base font-semibold"
+                asChild
+              >
+                <a href="#contact">Take My Business to the Next Level!</a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="hero-cta-btn text-base"
+                asChild
+              >
+                <a href="#projects">Discover Real Success</a>
+              </Button>
+            </div>
           </div>
 
-          {/* Slogan — below buttons, larger, centered on mobile / left on desktop */}
+          {/* ── Right: Profile picture — circular, smoky pink bg ── */}
+          <div className="relative flex-shrink-0 group self-center">
+
+            {/* Pink pulsing halo ring */}
+            <div className="hero-photo-halo absolute inset-0 rounded-full" />
+
+            {/* Circular frame with smoky pink background */}
+            <div
+              className="relative overflow-hidden rounded-full transition-all duration-500"
+              style={{
+                width: "clamp(260px, 30vw, 360px)",
+                height: "clamp(260px, 30vw, 360px)",
+                background: "radial-gradient(circle at 50% 60%, rgba(255,182,193,0.5) 0%, rgba(255,153,187,0.3) 45%, rgba(255,105,160,0.15) 100%)",
+                boxShadow: "0 0 0 3px rgba(255,182,193,0.3), 0 0 30px 6px rgba(255,182,193,0.18), 0 20px 60px -10px rgba(255,105,160,0.25)",
+                transition: "box-shadow 0.5s ease",
+              }}
+            >
+              <img
+                src={profileImg}
+                alt="Jhezreel Suarez – No-Code Automation Specialist"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{
+                  objectPosition: "50% 18%",
+                  filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))",
+                }}
+              />
+            </div>
+
+            {/* Hover glow intensifier */}
+            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{ boxShadow: "0 0 40px 12px rgba(255,182,193,0.35)" }}
+            />
+
+            {/* Ambient glow blobs */}
+            <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/25 blur-2xl transition-all duration-500 group-hover:bg-primary/40" />
+            <div className="absolute -top-4 -left-4 h-20 w-20 rounded-full bg-primary/15 blur-xl transition-all duration-500 group-hover:bg-primary/30" />
+          </div>
+        </div>
+
+        {/* ── Slogan — full-width centered below the flex row ── */}
+        <div className="mt-12 flex justify-center">
           <p
-            className="max-w-2xl text-2xl font-bold italic leading-snug text-primary sm:text-[1.6rem] lg:text-[1.75rem]"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="max-w-3xl text-center text-2xl font-bold italic leading-snug sm:text-[1.6rem] lg:text-[1.75rem]"
+            style={{ fontFamily: "'Inter', sans-serif", color: "#FFFFFF" }}
           >
             "Mastering the systems behind your success, so you have the freedom to follow your passion."
           </p>
         </div>
 
-        {/* ── Right: Profile picture — circular, smoky pink bg ── */}
-        <div className="relative flex-shrink-0 group self-center">
-
-          {/* Pink pulsing halo ring */}
-          <div className="hero-photo-halo absolute inset-0 rounded-full" />
-
-          {/* Circular frame with smoky pink background */}
-          <div
-            className="relative overflow-hidden rounded-full transition-all duration-500"
-            style={{
-              width: "clamp(260px, 30vw, 360px)",
-              height: "clamp(260px, 30vw, 360px)",
-              background: "radial-gradient(circle at 50% 60%, rgba(255,182,193,0.5) 0%, rgba(255,153,187,0.3) 45%, rgba(255,105,160,0.15) 100%)",
-              boxShadow: "0 0 0 3px rgba(255,182,193,0.3), 0 0 30px 6px rgba(255,182,193,0.18), 0 20px 60px -10px rgba(255,105,160,0.25)",
-              transition: "box-shadow 0.5s ease",
-            }}
-          >
-            <img
-              src={profileImg}
-              alt="Jhezreel Suarez – No-Code Automation Specialist"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              style={{
-                objectPosition: "50% 10%",
-                filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))",
-              }}
-            />
-          </div>
-
-          {/* Hover glow intensifier */}
-          <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            style={{ boxShadow: "0 0 40px 12px rgba(255,182,193,0.35)" }}
-          />
-
-          {/* Ambient glow blobs */}
-          <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/25 blur-2xl transition-all duration-500 group-hover:bg-primary/40" />
-          <div className="absolute -top-4 -left-4 h-20 w-20 rounded-full bg-primary/15 blur-xl transition-all duration-500 group-hover:bg-primary/30" />
-        </div>
       </div>
     </section>
   );
