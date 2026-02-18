@@ -99,12 +99,21 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-background pt-20 fade-in-section visible">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
-      <div className="container relative z-10 mx-auto flex flex-col items-center gap-12 px-4 py-16 lg:flex-row lg:py-24">
-        <div className="flex-1 space-y-6 text-center lg:text-left">
-          {/* Enlarged badge */}
-          <div className="inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/10 px-6 py-3 backdrop-blur-sm">
-            <ShieldCheck className="h-7 w-7 text-primary flex-shrink-0" />
-            <span className="font-display text-lg font-semibold text-primary sm:text-xl">
+      <div className="container relative z-10 mx-auto flex flex-col items-center gap-12 px-4 py-16 lg:flex-row lg:items-start lg:py-24">
+
+        {/* ── Left: text content — strict left-aligned ── */}
+        <div className="flex-1 space-y-6 text-left">
+
+          {/* Name + tagline block — left-aligned like Lovable.dev personal site */}
+          <div className="space-y-1">
+            <p className="font-display text-3xl font-bold text-foreground sm:text-4xl">Jhezreel Suarez</p>
+            <p className="text-base text-muted-foreground">Jhezreel Suarez – Your Automation Sidekick Virtual Assistant!</p>
+          </div>
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm">
+            <ShieldCheck className="h-4 w-4 text-primary flex-shrink-0" />
+            <span className="font-sans text-sm font-semibold text-primary">
               GoHighLevel &amp; No-Code Automation Specialist
             </span>
           </div>
@@ -113,42 +122,71 @@ const HeroSection = () => {
             AI-Powered Automation to{" "}
             <span className="text-primary">Streamline and Scale</span> for Smarter Growth
           </h1>
+
           <p className="max-w-xl text-lg text-muted-foreground">
             Stop stressing over complicated setups. I help streamline your business operations so you can focus on what truly matters—serving your clients and growing your business.
           </p>
-          <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
-            <Button size="lg" className="text-base font-semibold transition-all duration-200 hover:scale-105 active:scale-95" asChild>
+
+          {/* CTA Buttons with gentle heartbeat-scale animation */}
+          <div className="flex flex-col items-start gap-3 sm:flex-row">
+            <Button
+              size="lg"
+              className="hero-cta-btn text-base font-semibold"
+              asChild
+            >
               <a href="#contact">Take My Business to the Next Level!</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-base transition-all duration-200 hover:scale-105 active:scale-95" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="hero-cta-btn text-base"
+              asChild
+            >
               <a href="#projects">Discover Real Success</a>
             </Button>
           </div>
+
+          {/* Slogan below buttons — italic, bold, legible */}
+          <p className="max-w-xl text-sm italic font-semibold leading-relaxed text-muted-foreground/80" style={{ fontFamily: "'Inter', sans-serif" }}>
+            Mastering the systems behind your success, so you have the freedom to follow your passion.
+          </p>
         </div>
 
-        {/* Profile picture — transparent bg, brand frame + hover glow */}
-        <div className="relative flex-shrink-0 group">
-          {/* Ambient glow behind photo */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/40 via-primary/20 to-transparent blur-2xl transition-all duration-500 group-hover:blur-3xl group-hover:from-primary/60" />
+        {/* ── Right: Profile picture — circular, pink glow halo, badge overlay ── */}
+        <div className="relative flex-shrink-0 group self-center lg:self-start lg:mt-8">
 
-          {/* Frame */}
+          {/* Pink pulsing halo ring */}
+          <div className="hero-photo-halo absolute inset-0 rounded-full" />
+
+          {/* Circular frame */}
           <div
-            className="relative h-72 w-72 overflow-visible rounded-2xl border-2 border-primary/40 transition-all duration-500 group-hover:border-primary/70 sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+            className="relative overflow-hidden rounded-full border-2 border-primary/50 transition-all duration-500 group-hover:border-primary/80"
             style={{
-              background: "linear-gradient(135deg, hsl(var(--primary)/0.08) 0%, transparent 100%)",
-              boxShadow: "0 0 0 4px hsl(var(--primary)/0.12), 0 20px 60px -10px hsl(var(--primary)/0.25)",
+              width: "clamp(260px, 30vw, 360px)",
+              height: "clamp(260px, 30vw, 360px)",
+              boxShadow: "0 0 0 4px hsl(var(--primary)/0.15), 0 20px 60px -10px hsl(var(--primary)/0.3)",
               transition: "box-shadow 0.5s ease, border-color 0.5s ease",
             }}
           >
             <img
               src={profileImg}
               alt="Jhezreel Suarez – No-Code Automation Specialist"
-              className="h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105"
-              style={{ filter: "drop-shadow(0 8px 24px hsl(var(--primary)/0.3))" }}
+              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
           </div>
 
-          {/* Decorative orbs */}
+          {/* Floating badge — top-right of circle, half-size pill */}
+          <div
+            className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background/80 backdrop-blur-sm px-2.5 py-1 shadow-lg"
+            style={{ maxWidth: "180px" }}
+          >
+            <ShieldCheck className="h-3 w-3 text-primary flex-shrink-0" />
+            <span className="font-sans text-[10px] font-semibold leading-tight text-foreground">
+              GoHighLevel &amp; No-Code Automation Specialist
+            </span>
+          </div>
+
+          {/* Ambient glow blobs */}
           <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/25 blur-2xl transition-all duration-500 group-hover:bg-primary/40" />
           <div className="absolute -top-4 -left-4 h-20 w-20 rounded-full bg-primary/15 blur-xl transition-all duration-500 group-hover:bg-primary/30" />
         </div>
