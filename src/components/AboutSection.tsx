@@ -3,22 +3,30 @@ const AboutSection = () => {
     <section id="about" className="bg-card py-20 fade-in-section">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
+
+          {/* Pill badge — heart + "About Me" beat together */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-            <span className="heartbeat-emoji">❤️</span>
-            About Me
+            <span className="heartbeat-emoji about-heart-emoji">❤️</span>
+            <span className="heartbeat-emoji about-heart-text">About Me</span>
           </div>
+
           <h2 className="mb-6 font-display text-3xl font-bold text-foreground sm:text-4xl">
             Hi, I'm <span className="text-primary">Jhez!</span> Your Automation Sidekick Virtual Assistant!
           </h2>
-          <p className="mb-4 text-base leading-relaxed text-muted-foreground" style={{ fontSize: "0.875rem" }}>
+
+          {/* Both body paragraphs at identical font size */}
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             Based in the Philippines, I partner with business owners to simplify their operations through AI-powered automations and smart workflows. By saving you 20–50+ hours a week, I handle the systems behind your success so you can focus on your clients, your growth, and the passion that started it all.
           </p>
-          <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
+
+          <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
             I've helped entrepreneurs reclaim hours each week so they can focus on what truly lights them up—whether that's scaling their vision, nurturing their passions, or simply enjoying the freedom automation brings.
           </p>
-          <blockquote className="rounded-xl border border-primary/20 bg-primary/5 px-6 py-4 font-display text-xl italic text-foreground">
-            "Mastering the systems behind your success, so you have the freedom to follow your passion."
-          </blockquote>
+
+          {/* New centered closing line — no quote bubble */}
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Let me also help you create a business that runs smoother, responds faster, and grows smarter — without adding more to your daily workload.
+          </p>
         </div>
       </div>
     </section>

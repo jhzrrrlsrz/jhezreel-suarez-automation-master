@@ -116,15 +116,63 @@ a, button, [role="button"], label, input, textarea, select {
 /* ── Heartbeat animation ─────────────────────────────────────────── */
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
-  14% { transform: scale(1.25); }
+  14% { transform: scale(1.28); }
   28% { transform: scale(1); }
-  42% { transform: scale(1.2); }
+  42% { transform: scale(1.22); }
   70% { transform: scale(1); }
 }
 
 .heartbeat-emoji {
   display: inline-block;
-  animation: heartbeat 1.6s ease-in-out infinite;
+  animation: heartbeat 3s ease-in-out infinite;
+}
+
+/* About section: heart + text beat in sync */
+.about-heart-emoji {
+  font-size: 1.2em;
+  animation: heartbeat 3s ease-in-out infinite;
+}
+
+.about-heart-text {
+  animation: heartbeat 3s ease-in-out infinite;
+}
+
+/* ── Hero photo pink pulsing halo ────────────────────────────────── */
+@keyframes pink-halo {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgba(255,182,193,0),
+      0 0 18px 6px rgba(255,182,193,0.18);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(255,182,193,0.12),
+      0 0 40px 16px rgba(255,182,193,0.22);
+    transform: scale(1.03);
+  }
+}
+
+.hero-photo-halo {
+  animation: pink-halo 2.4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Hero CTA buttons heartbeat-scale ────────────────────────────── */
+@keyframes cta-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.hero-cta-btn {
+  animation: cta-pulse 3s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-cta-btn:hover {
+  animation: none;
+  transform: scale(1.08);
 }
 
 /* ── Hire Me bounce-glow ─────────────────────────────────────────── */
