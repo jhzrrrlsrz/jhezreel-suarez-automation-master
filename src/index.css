@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -25,7 +26,7 @@
     --border: 210 20% 85%;
     --input: 210 20% 85%;
     --ring: 339 100% 86%;
-    --radius: 0.75rem;
+    --radius: 0.875rem;
     --navy: 210 100% 12%;
     --blush: 339 100% 86%;
     --softer-pink: 5 93% 92%;
@@ -40,6 +41,10 @@
     --sidebar-accent-foreground: 210 29% 13%;
     --sidebar-border: 210 20% 85%;
     --sidebar-ring: 339 100% 86%;
+    --shadow-sm: 0px 1px 49.75px 10px hsla(210, 40%, 96%, 0.93);
+    --shadow: 0px 1px 99.5px 10px hsla(210, 40%, 96%, 0.93);
+    --shadow-md: 0px 1px 149.25px 10px hsla(210, 40%, 96%, 0.93);
+    --shadow-lg: 0px 1px 248.75px 10px hsla(210, 40%, 96%, 0.93);
   }
 
   .dark {
@@ -76,6 +81,11 @@
     --sidebar-accent-foreground: 0 0% 96%;
     --sidebar-border: 210 40% 22%;
     --sidebar-ring: 339 100% 86%;
+    --radius: 0.875rem;
+    --shadow-sm: 0px 1px 49.75px 10px hsla(210, 40%, 96%, 0.93);
+    --shadow: 0px 1px 99.5px 10px hsla(210, 40%, 96%, 0.93);
+    --shadow-md: 0px 1px 149.25px 10px hsla(210, 40%, 96%, 0.93);
+    --shadow-lg: 0px 1px 248.75px 10px hsla(210, 40%, 96%, 0.93);
   }
 }
 
@@ -220,4 +230,3 @@ a, button, [role="button"], label, input, textarea, select {
   opacity: 1;
   transform: translateY(0);
 }
-
