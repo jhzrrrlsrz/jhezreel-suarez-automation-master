@@ -71,8 +71,8 @@ const Header = () => {
           >
             {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
-          <Button size="sm" className="ml-2 hire-me-btn" asChild>
-            <a href="#contact">Hire Me!</a>
+          <Button size="sm" className="ml-2 hire-me-btn px-5" asChild>
+            <a href="#contact">Hire Jhez!</a>
           </Button>
         </nav>
 
@@ -99,9 +99,9 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="mt-2 hire-me-btn" asChild>
+            <Button size="sm" className="mt-2 hire-me-btn px-5" asChild>
               <a href="#contact" onClick={() => setIsOpen(false)}>
-                Hire Me!
+                Hire Jhez!
               </a>
             </Button>
           </div>
