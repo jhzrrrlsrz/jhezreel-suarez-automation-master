@@ -154,7 +154,7 @@ const HeroSection = () => {
               <img
                 src={profileImg}
                 alt="Jhezreel Suarez – No-Code Automation Specialist"
-                className="h-full w-full object-cover rounded-sm shadow-inner opacity-100 border-solid"
+                className="h-full w-full rounded-sm shadow-inner opacity-100 border-solid object-scale-down"
                 style={{
                   objectPosition: "50% 3%",
                   transform: "scale(1.22) translateY(-6%)",
