@@ -152,15 +152,15 @@ const HeroSection = () => {
               }}>
 
               <img
-                src={profileImg}
+
                 alt="Jhezreel Suarez – No-Code Automation Specialist"
-                className="h-full w-full rounded-sm shadow-inner opacity-100 object-cover border-2 border-double"
+                className="h-full w-full shadow-inner opacity-100 object-scale-down border-0 border-none rounded-full"
                 style={{
                   objectPosition: "50% 3%",
                   transform: "scale(1.22) translateY(-6%)",
                   transformOrigin: "top center",
                   filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))"
-                }} />
+                }} src="/lovable-uploads/9d1ac2b9-64bb-4dda-991f-c87d70fb5f4f.png" />
 
             </div>
 
