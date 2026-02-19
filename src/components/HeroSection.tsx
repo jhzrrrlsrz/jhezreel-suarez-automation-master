@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import profileImg from "@/assets/jhezreel-profile-v5.png";
+import profileImg from "@/assets/jhezreel-profile-v6.png";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -141,18 +141,14 @@ const HeroSection = () => {
           {/* ── Right: Profile picture — circular, smoky pink bg ── */}
           <div className="relative flex-shrink-0 group self-center">
 
-            {/* Pink pulsing halo ring */}
-            <div className="hero-photo-halo absolute inset-0 rounded-full" />
-
             {/* Circular frame with smoky pink background */}
             <div
-              className="relative overflow-hidden rounded-full transition-all duration-500"
+              className="relative overflow-hidden rounded-full"
               style={{
                 width: "clamp(260px, 30vw, 360px)",
                 height: "clamp(260px, 30vw, 360px)",
                 background: "radial-gradient(circle at 50% 60%, rgba(255,182,193,0.5) 0%, rgba(255,153,187,0.3) 45%, rgba(255,105,160,0.15) 100%)",
-                boxShadow: "0 0 0 3px rgba(255,182,193,0.3), 0 0 30px 6px rgba(255,182,193,0.18), 0 20px 60px -10px rgba(255,105,160,0.25)",
-                transition: "box-shadow 0.5s ease",
+                boxShadow: "0 0 0 3px rgba(255,182,193,0.3), 0 20px 60px -10px rgba(255,105,160,0.25)",
               }}
             >
               <img
@@ -160,25 +156,21 @@ const HeroSection = () => {
                 alt="Jhezreel Suarez – No-Code Automation Specialist"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style={{
-                  objectPosition: "50% 5%",
+                  objectPosition: "50% 2%",
+                  objectFit: "cover",
                   filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))",
                 }}
               />
             </div>
 
-            {/* Hover glow intensifier */}
-            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              style={{ boxShadow: "0 0 40px 12px rgba(255,182,193,0.35)" }}
-            />
-
             {/* Ambient glow blobs */}
-            <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/25 blur-2xl transition-all duration-500 group-hover:bg-primary/40" />
-            <div className="absolute -top-4 -left-4 h-20 w-20 rounded-full bg-primary/15 blur-xl transition-all duration-500 group-hover:bg-primary/30" />
+            <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/25 blur-2xl" />
+            <div className="absolute -top-4 -left-4 h-20 w-20 rounded-full bg-primary/15 blur-xl" />
           </div>
         </div>
 
         {/* ── Slogan — full-width centered below the flex row ── */}
-        <div className="mt-8 flex justify-center">
+        <div className="mt-24 flex justify-center">
           <p
             className="max-w-3xl text-center text-2xl font-bold italic leading-snug sm:text-[1.6rem] lg:text-[1.75rem]"
             style={{ fontFamily: "'Inter', sans-serif", color: "#FFFFFF" }}
