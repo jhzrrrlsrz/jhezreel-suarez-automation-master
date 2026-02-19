@@ -18,14 +18,14 @@ const HeroSection = () => {
     resize();
     window.addEventListener("resize", resize);
 
-    type Orb = { x: number; y: number; r: number; vx: number; vy: number; color: string; opacity: number };
+    type Orb = {x: number;y: number;r: number;vx: number;vy: number;color: string;opacity: number;};
     const orbs: Orb[] = [];
     const orbColors = [
-      "rgba(255,182,193,",
-      "rgba(0,80,160,",
-      "rgba(253,209,220,",
-      "rgba(255,255,255,",
-    ];
+    "rgba(255,182,193,",
+    "rgba(0,80,160,",
+    "rgba(253,209,220,",
+    "rgba(255,255,255,"];
+
     for (let i = 0; i < 18; i++) {
       orbs.push({
         x: Math.random() * canvas.width,
@@ -34,11 +34,11 @@ const HeroSection = () => {
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.2,
         color: orbColors[Math.floor(Math.random() * orbColors.length)],
-        opacity: Math.random() * 0.12 + 0.04,
+        opacity: Math.random() * 0.12 + 0.04
       });
     }
 
-    type Particle = { x: number; y: number; r: number; vx: number; vy: number; color: string; opacity: number };
+    type Particle = {x: number;y: number;r: number;vx: number;vy: number;color: string;opacity: number;};
     const particles: Particle[] = [];
     const pColors = ["rgba(255,182,193,0.7)", "rgba(255,255,255,0.5)", "rgba(253,209,220,0.5)"];
     for (let i = 0; i < 60; i++) {
@@ -49,7 +49,7 @@ const HeroSection = () => {
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.25,
         color: pColors[Math.floor(Math.random() * pColors.length)],
-        opacity: Math.random() * 0.8 + 0.2,
+        opacity: Math.random() * 0.8 + 0.2
       });
     }
 
@@ -123,16 +123,16 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="hero-cta-btn text-base font-semibold"
-                asChild
-              >
+                asChild>
+
                 <a href="#contact">Take My Business to the Next Level!</a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="hero-cta-btn text-base"
-                asChild
-              >
+                asChild>
+
                 <a href="#projects">Discover Real Success</a>
               </Button>
             </div>
@@ -148,20 +148,20 @@ const HeroSection = () => {
                 width: "clamp(260px, 30vw, 360px)",
                 height: "clamp(260px, 30vw, 360px)",
                 background: "radial-gradient(circle at 50% 60%, rgba(255,182,193,0.5) 0%, rgba(255,153,187,0.3) 45%, rgba(255,105,160,0.15) 100%)",
-                boxShadow: "0 0 0 3px rgba(255,182,193,0.3), 0 20px 60px -10px rgba(255,105,160,0.25)",
-              }}
-            >
+                boxShadow: "0 0 0 3px rgba(255,182,193,0.3), 0 20px 60px -10px rgba(255,105,160,0.25)"
+              }}>
+
               <img
                 src={profileImg}
                 alt="Jhezreel Suarez – No-Code Automation Specialist"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover rounded-sm shadow-inner opacity-100 border-solid"
                 style={{
                   objectPosition: "50% 3%",
                   transform: "scale(1.22) translateY(-6%)",
                   transformOrigin: "top center",
-                  filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))",
-                }}
-              />
+                  filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))"
+                }} />
+
             </div>
 
             {/* Ambient glow blobs */}
@@ -173,17 +173,16 @@ const HeroSection = () => {
         {/* ── Slogan — full-width centered below the flex row ── */}
         <div className="mt-24 flex justify-center">
           <p
-            className="max-w-3xl text-center text-2xl font-bold italic leading-snug sm:text-[1.6rem] lg:text-[1.75rem]"
-            style={{ fontFamily: "'Inter', sans-serif", color: "#FFFFFF" }}
-          >
+            className="max-w-3xl text-center text-2xl italic leading-snug sm:text-[1.6rem] font-normal lg:text-xl"
+            style={{ fontFamily: "'Inter', sans-serif", color: "#FFFFFF" }}>
+
             "Mastering the systems behind your success, so you have the freedom to follow your passion."
           </p>
         </div>
 
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
-
