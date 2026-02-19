@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import profileImg from "@/assets/jhezreel-profile-v6.png";
+import profileImg from "@/assets/jhezreel-profile-v7.png";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -154,10 +154,11 @@ const HeroSection = () => {
               <img
                 src={profileImg}
                 alt="Jhezreel Suarez – No-Code Automation Specialist"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-full w-full object-cover"
                 style={{
-                  objectPosition: "50% 2%",
-                  objectFit: "cover",
+                  objectPosition: "50% 0%",
+                  transform: "scale(1.18) translateY(-4%)",
+                  transformOrigin: "top center",
                   filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))",
                 }}
               />
