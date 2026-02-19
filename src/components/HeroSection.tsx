@@ -160,7 +160,7 @@ const HeroSection = () => {
                 alt="Jhezreel Suarez – No-Code Automation Specialist"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style={{
-                  objectPosition: "50% 18%",
+                  objectPosition: "50% 5%",
                   filter: "drop-shadow(0 4px 24px rgba(255,182,193,0.18))",
                 }}
               />
@@ -178,7 +178,7 @@ const HeroSection = () => {
         </div>
 
         {/* ── Slogan — full-width centered below the flex row ── */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <p
             className="max-w-3xl text-center text-2xl font-bold italic leading-snug sm:text-[1.6rem] lg:text-[1.75rem]"
             style={{ fontFamily: "'Inter', sans-serif", color: "#FFFFFF" }}

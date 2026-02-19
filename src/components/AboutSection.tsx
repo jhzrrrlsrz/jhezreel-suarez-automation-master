@@ -14,17 +14,17 @@ const AboutSection = () => {
             Hi, I'm <span className="text-primary">Jhez!</span> Your Automation Sidekick Virtual Assistant!
           </h2>
 
-          {/* Both body paragraphs at identical font size */}
-          <p className="mb-4 text-[1.75rem] leading-relaxed text-muted-foreground">
+          {/* Body paragraphs — ~half the heading size */}
+          <p className="mb-4 text-lg leading-relaxed text-muted-foreground">
             Based in the Philippines, I partner with business owners to simplify their operations through AI-powered automations and smart workflows. By saving you 20–50+ hours a week, I handle the systems behind your success so you can focus on your clients, your growth, and the passion that started it all.
           </p>
 
-          <p className="mb-6 text-[1.75rem] leading-relaxed text-muted-foreground">
+          <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
             I've helped entrepreneurs reclaim hours each week so they can focus on what truly lights them up—whether that's scaling their vision, nurturing their passions, or simply enjoying the freedom automation brings.
           </p>
 
-          {/* New centered closing line — no quote bubble */}
-          <p className="text-[1.75rem] leading-relaxed text-muted-foreground">
+          {/* Centered closing line */}
+          <p className="text-lg leading-relaxed text-muted-foreground">
             Let me also help you create a business that runs smoother, responds faster, and grows smarter — without adding more to your daily workload.
           </p>
         </div>
