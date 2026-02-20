@@ -2,13 +2,13 @@ import aboutPhoto from "@/assets/jhezreel-about.png";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 fade-in-section shadow-inner border-4 border-dotted rounded-3xl bg-accent border-muted-foreground">
+    <section id="about" className="py-20 fade-in-section shadow-inner border-4 border-dotted rounded-3xl bg-accent border-muted-foreground px-[100px] my-[5px] mx-0">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-[10px] my-0 px-[10px] py-[50px] rounded-3xl bg-accent">
 
           {/* Pill badge */}
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-primary-foreground bg-slate-200">
+          <div className="text-center mb-6 px-[100px] my-[20px]">
+            <div className="inline-flex items-center gap-2 rounded-full text-sm font-medium text-primary-foreground bg-slate-200 my-[5px] px-[20px] py-[10px] mx-[10px]">
               <span className="heartbeat-emoji about-heart-emoji">❤️</span>
               <span className="heartbeat-emoji about-heart-text text-primary-foreground">About Me</span>
             </div>
@@ -39,14 +39,14 @@ const AboutSection = () => {
               <img
                 src={aboutPhoto}
                 alt="Jhezreel holding a laptop"
-                className="w-full h-auto max-h-[500px] object-contain"
-              />
+                className="w-full h-auto max-h-[500px] object-scale-down" />
+
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AboutSection;
