@@ -4,7 +4,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 fade-in-section shadow-inner border-4 border-dotted rounded-3xl bg-accent border-muted-foreground">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl shadow-2xl border border-destructive-foreground border-none mx-[10px] my-0 px-[10px] py-[50px] rounded-3xl bg-primary">
+        <div className="max-w-5xl mx-[10px] my-0 px-[10px] py-[50px] rounded-3xl bg-accent">
 
           {/* Pill badge */}
           <div className="text-center mb-6">
@@ -14,9 +14,9 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            {/* Left: Text */}
-            <div className="flex-1 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-12">
+            {/* Left: Darker pink text box */}
+            <div className="flex-1 shadow-2xl rounded-3xl bg-primary px-8 py-10 text-center md:text-left">
               <h2 className="mb-6 font-display text-3xl font-bold sm:text-4xl text-neutral-50">
                 Hi, I'm <span className="text-primary-foreground">Jhez!</span> Your Automation Sidekick Virtual Assistant!
               </h2>
@@ -34,12 +34,12 @@ const AboutSection = () => {
               </p>
             </div>
 
-            {/* Right: Photo */}
-            <div className="flex-shrink-0 w-64 md:w-72 lg:w-80">
+            {/* Right: Large photo on lighter pink background */}
+            <div className="flex-shrink-0 w-full md:w-[340px] lg:w-[400px] flex items-center justify-center">
               <img
                 src={aboutPhoto}
                 alt="Jhezreel holding a laptop"
-                className="w-full h-auto object-contain"
+                className="w-full h-auto max-h-[500px] object-contain"
               />
             </div>
           </div>
