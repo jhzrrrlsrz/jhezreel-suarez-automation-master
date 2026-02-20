@@ -1,8 +1,8 @@
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 fade-in-section bg-sidebar-primary">
+    <section id="about" className="py-20 fade-in-section shadow-inner border-4 border-dotted rounded-3xl bg-accent border-muted-foreground">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="max-w-3xl text-center shadow-2xl border border-destructive-foreground border-none mx-[10px] my-0 px-[10px] py-[50px] rounded-3xl bg-primary">
 
           {/* Pill badge — heart + "About Me" beat together */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-primary-foreground bg-[sidebar-accent-foreground] bg-slate-200">

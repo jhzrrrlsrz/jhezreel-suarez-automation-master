@@ -10,8 +10,8 @@ const benefits = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 fade-in-section bg-accent">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 fade-in-section bg-rose-200 opacity-100 shadow-inner border-double border-4 border-destructive rounded-3xl">
+      <div className="container px-4 py-[8px] mx-[10px]">
         <div className="mb-12 text-center">
           <h2 className="mb-3 font-display text-3xl font-bold sm:text-4xl text-primary-foreground">
             Let's Build Something <span className="text-rose-400">AMAZING</span> Together!
@@ -25,15 +25,15 @@ const ContactSection = () => {
           {/* Left column - Why Choose AI Automation */}
           <div className="space-y-6">
             <h3 className="font-display text-xl font-semibold text-secondary">Why Choose AI Automation?</h3>
-            <div className="space-y-4 bg-slate-800">
+            <div className="space-y-4 border-8 rounded-xl border-accent border-solid mx-[2px] my-[20px] px-[10px] py-[10px] bg-primary-foreground">
               {benefits.map((b) =>
               <div key={b.title} className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <b.icon className="h-5 w-5 text-primary bg-muted-foreground" />
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-accent border-8">
+                    <b.icon className="h-5 w-5 text-primary-foreground bg-accent border-0 border-double border-sky-950" />
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground">{b.title}</div>
-                    <div className="text-sm text-muted-foreground">{b.desc}</div>
+                    <div className="font-semibold text-accent">{b.title}</div>
+                    <div className="text-sm text-slate-50">{b.desc}</div>
                   </div>
                 </div>
               )}
